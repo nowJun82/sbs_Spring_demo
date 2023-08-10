@@ -19,21 +19,16 @@ public class UserHomeController {
 		return "안녕하세요";
 	}
 	
-	@RequestMapping("user/home/main2")
+	@RequestMapping("user/home/getCount")
 	@ResponseBody
-	public String showMain2() {
-		return "반갑습니다";
-	}
-	
-	@RequestMapping("user/home/main3")
-	@ResponseBody
-	public String showMain3() {
-		return "또 만나요";
-	}
-	
-	@RequestMapping("user/home/main4")
-	@ResponseBody
-	public int showMain4() {
+	public int getCount() {
 		return result++;
+	}
+	
+	@RequestMapping("user/home/doSetCount")
+	@ResponseBody
+	public String doSetCount(int result) {	// 인자를 넘겨줘야 함
+		this.result = result;
+		return "값이 " + result + "으로 초기화되었습니다.";
 	}
 }
